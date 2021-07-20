@@ -26,8 +26,8 @@ export default class Section extends Component {
                   </h4>
                   <p className="para-desc mx-auto text-white-50">
                     Start building on the worlds base layer for all
-                    attestations. Help connect the planet one
-                    Attestation at a time.
+                    attestations. Help connect the planet one Attestation at a
+                    time.
                   </p>
                   <div className="buy-button">
                     <a
@@ -35,7 +35,7 @@ export default class Section extends Component {
                       rel="noopener noreferrer"
                       id="buyButton"
                       className="btn btn-light"
-                      href="//1.envato.market/landrickreactjs"
+                      href="//"
                     >
                       Read the whitepaper
                     </a>
@@ -74,7 +74,7 @@ export default class Section extends Component {
           </Container>
         </section>
         <div className="position-relative">
-          <div className='shape integration-hero overflow-hidden text-light'/>
+          <div className="shape integration-hero overflow-hidden text-light" />
         </div>
       </React.Fragment>
     );

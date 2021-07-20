@@ -26,25 +26,7 @@ class Topbar extends Component {
     this.state = {
       isOpen: false,
       dropdownOpenShop: false,
-      navLinks: [
-        //Note : each child and nested child must have unique id
-        { id: 1, title: 'Home', link: '/' },
-        // { id: 2, title: 'Blog', link: '/index' },
-        { id: 3, title: 'Docs', link: '/index' },
-        { id: 4, title: 'Github', link: '/index' },
-        // {
-        //   id: 4,
-        //   title: "Docs",
-        //   link: "/#",
-        //   isOpenSubMenu: false,
-        //   child: [
-        //     { title: "Documentations", link: "/documentation" },
-        //     { title: "Changelog", link: "/changelog" },
-        //     { title: "Components", link: "/components" },
-        //     { title: "Widget", link: "/widget" },
-        //   ],
-        // },
-      ],
+      navLinks: [],
       wishlistModal: false,
       dropdownIsOpen: false,
     };
@@ -130,12 +112,12 @@ class Topbar extends Component {
       //Match level 2 id
       tmpLink.id === level2_id
         ? tmpLink.child.map((tmpchild) =>
-          //if level1 id is matched then match level 3 id
-          tmpchild.id === level3_id
-            ? //if id is matched then update status(level 3 sub menu will be open)
-            (tmpchild.isOpenNestedSubMenu = !tmpchild.isOpenNestedSubMenu)
-            : (tmpchild.isOpenNestedSubMenu = false),
-        )
+            //if level1 id is matched then match level 3 id
+            tmpchild.id === level3_id
+              ? //if id is matched then update status(level 3 sub menu will be open)
+                (tmpchild.isOpenNestedSubMenu = !tmpchild.isOpenNestedSubMenu)
+              : (tmpchild.isOpenNestedSubMenu = false),
+          )
         : false,
     );
     this.setState({ navLinks: tmpLinks });
@@ -146,47 +128,55 @@ class Topbar extends Component {
       <React.Fragment>
         {this.props.tagline ? this.props.tagline : null}
 
-        <header id='topnav' className='defaultscroll sticky'>
+        <header id="topnav" className="defaultscroll sticky">
           <Container>
             <div>
-
               {this.props.hasDarkTopBar ? (
-                  <a className='logo' href='index.html'>
-                    <img src={logodark} height='30' className='logo-light-mode' alt='' />
-                    <img src={logolight} height='30' className='logo-dark-mode' alt='' />
-                  </a>
-                ) :
-                <a className='logo' href='index.html'>
-                  <span className='logo-light-mode'>
-                    <img src={logodark} className='l-dark' height='30' alt='' />
-                    <img src={logolight} className='l-light' height='30' alt='' />
-                  </span>
-                  <img src={logolight} height='24' className='logo-dark-mode' alt='' />
+                <a className="logo" href="index.html">
+                  <img
+                    src={logodark}
+                    height="30"
+                    className="logo-light-mode"
+                    alt=""
+                  />
+                  <img
+                    src={logolight}
+                    height="30"
+                    className="logo-dark-mode"
+                    alt=""
+                  />
                 </a>
-              }
-            </div>
-            <div className='buy-button'>
-              <Link
-                to='//1.envato.market/landrickreactjs'
-                target='_blank'
-                rel='noopener noreferrer'
-                id='buyButton'
-                className='btn btn-primary'
-              >
-                Get Started
-              </Link>
+              ) : (
+                <a className="logo" href="index.html">
+                  <span className="logo-light-mode">
+                    <img src={logodark} className="l-dark" height="30" alt="" />
+                    <img
+                      src={logolight}
+                      className="l-light"
+                      height="30"
+                      alt=""
+                    />
+                  </span>
+                  <img
+                    src={logolight}
+                    height="24"
+                    className="logo-dark-mode"
+                    alt=""
+                  />
+                </a>
+              )}
             </div>
 
-            <div className='menu-extras'>
-              <div className='menu-item'>
+            <div className="menu-extras">
+              <div className="menu-item">
                 <Link
-                  to='#'
+                  to="#"
                   onClick={this.toggleLine}
                   className={
                     this.state.isOpen ? 'navbar-toggle open' : 'navbar-toggle'
                   }
                 >
-                  <div className='lines'>
+                  <div className="lines">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -196,13 +186,13 @@ class Topbar extends Component {
             </div>
 
             <div
-              id='navigation'
+              id="navigation"
               style={{ display: this.state.isOpen ? 'block' : 'none' }}
             >
-              <ul className='navigation-menu' id='top-menu'>
+              <ul className="navigation-menu" id="top-menu">
                 {this.state.navLinks.map((navLink, key) =>
                   navLink.child ? (
-                    <li className='has-submenu' key={key}>
+                    <li className="has-submenu" key={key}>
                       {/* child item(menu Item) - Level 1 */}
                       <Link
                         to={navLink.link}
@@ -214,7 +204,7 @@ class Topbar extends Component {
                         {navLink.title}
                       </Link>
                       {/* <i className="mdi mdi-chevron-right me-1"></i> */}
-                      <span className='menu-arrow'></span>
+                      <span className="menu-arrow"></span>
                       {navLink.isMegaMenu ? (
                         // if menu is mega menu(2 columns grid)
                         <ul
@@ -229,9 +219,7 @@ class Topbar extends Component {
                               {navLink.child.map((item, childKey) =>
                                 item.id < 12 ? (
                                   <li key={childKey}>
-                                    <Link to={item.link}>
-                                      {item.title}
-                                    </Link>
+                                    <Link to={item.link}>{item.title}</Link>
                                   </li>
                                 ) : null,
                               )}
@@ -245,7 +233,7 @@ class Topbar extends Component {
                                     <Link to={item.link}>
                                       {item.title}
                                       {item.isNew ? (
-                                        <span className='badge bg-danger rounded ms-2'>
+                                        <span className="badge bg-danger rounded ms-2">
                                           new
                                         </span>
                                       ) : null}
@@ -263,17 +251,17 @@ class Topbar extends Component {
                                     <Link to={item.link}>
                                       {item.title}
                                       {item.isNew ? (
-                                        <span className='badge bg-danger'>
+                                        <span className="badge bg-danger">
                                           new
                                         </span>
                                       ) : null}
                                       {item.isOnePage ? (
-                                        <span className='badge bg-warning rounded ms-2'>
+                                        <span className="badge bg-warning rounded ms-2">
                                           Onepage
                                         </span>
                                       ) : null}
                                       {item.isupdatePage ? (
-                                        <span className='badge badge-pill bg-info'>
+                                        <span className="badge badge-pill bg-info">
                                           Updated
                                         </span>
                                       ) : null}
@@ -292,12 +280,12 @@ class Topbar extends Component {
                                       {item.title}
 
                                       {item.isOnePage ? (
-                                        <span className='badge bg-warning rounded ms-2'>
+                                        <span className="badge bg-warning rounded ms-2">
                                           Onepage
                                         </span>
                                       ) : null}
                                       {item.isupdatePage ? (
-                                        <span className='badge badge-pill bg-info'>
+                                        <span className="badge badge-pill bg-info">
                                           Updated
                                         </span>
                                       ) : null}
@@ -316,12 +304,12 @@ class Topbar extends Component {
                                       {item.title}
 
                                       {item.isOnePage ? (
-                                        <span className='badge bg-warning rounded ms-2'>
+                                        <span className="badge bg-warning rounded ms-2">
                                           Onepage
                                         </span>
                                       ) : null}
                                       {item.isupdatePage ? (
-                                        <span className='badge badge-pill bg-info'>
+                                        <span className="badge badge-pill bg-info">
                                           Updated
                                         </span>
                                       ) : null}
@@ -342,7 +330,7 @@ class Topbar extends Component {
                           {navLink.child.map((childArray, childKey) =>
                             childArray.nestedChild ? (
                               // sub menu item - Level 2
-                              <li className='has-submenu' key={childKey}>
+                              <li className="has-submenu" key={childKey}>
                                 <Link
                                   to={childArray.link}
                                   onClick={(event) => {
@@ -355,12 +343,12 @@ class Topbar extends Component {
                                 >
                                   {childArray.title}{' '}
                                   {childArray.isNew ? (
-                                    <span className='badge badge-pill badge-success'>
+                                    <span className="badge badge-pill badge-success">
                                       Added
                                     </span>
                                   ) : null}
                                 </Link>
-                                <span className='submenu-arrow'></span>
+                                <span className="submenu-arrow"></span>
                                 <ul
                                   className={
                                     childArray.isOpenNestedSubMenu
@@ -375,12 +363,12 @@ class Topbar extends Component {
                                         <Link to={nestedChildArray.link}>
                                           {nestedChildArray.title}{' '}
                                           {nestedChildArray.isNewPage ? (
-                                            <span className='badge badge-danger rounded'>
+                                            <span className="badge badge-danger rounded">
                                               NEW
                                             </span>
                                           ) : null}
                                           {nestedChildArray.isupdatePage ? (
-                                            <span className='badge badge-pill badge-info'>
+                                            <span className="badge badge-pill badge-info">
                                               Updated
                                             </span>
                                           ) : null}
@@ -408,44 +396,34 @@ class Topbar extends Component {
                   ),
                 )}
               </ul>
-              <div className='buy-menu-btn d-none'>
-                <Link
-                  to='https://1.envato.market/landrickreactjs'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='btn btn-primary'
-                >
-                  Get Started
-                </Link>
-              </div>
             </div>
           </Container>
         </header>
 
         <Modal
           isOpen={this.state.wishlistModal}
-          tabIndex='-1'
+          tabIndex="-1"
           centered
-          contentClassName='rounded shadow-lg border-0 overflow-hidden'
+          contentClassName="rounded shadow-lg border-0 overflow-hidden"
           toggle={this.toggleWishlistModal}
         >
-          <ModalBody className='py-5'>
-            <div className='text-center'>
+          <ModalBody className="py-5">
+            <div className="text-center">
               <div
-                className='icon d-flex align-items-center justify-content-center bg-soft-danger rounded-circle mx-auto'
+                className="icon d-flex align-items-center justify-content-center bg-soft-danger rounded-circle mx-auto"
                 style={{ height: '95px', width: '95px' }}
               >
-                <h1 className='mb-0'>
-                  <i className='uil uil-heart-break align-middle'></i>
+                <h1 className="mb-0">
+                  <i className="uil uil-heart-break align-middle"></i>
                 </h1>
               </div>
-              <div className='mt-4'>
+              <div className="mt-4">
                 <h4>Your wishlist is empty.</h4>
-                <p className='text-muted'>
+                <p className="text-muted">
                   Create your first wishlist request...
                 </p>
-                <div className='mt-4'>
-                  <Link to='#' className='btn btn-outline-primary'>
+                <div className="mt-4">
+                  <Link to="#" className="btn btn-outline-primary">
                     + Create new wishlist
                   </Link>
                 </div>
@@ -455,7 +433,6 @@ class Topbar extends Component {
         </Modal>
       </React.Fragment>
     );
-
   }
 }
 

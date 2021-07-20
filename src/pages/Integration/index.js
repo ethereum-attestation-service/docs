@@ -38,10 +38,8 @@ export default class index extends Component {
         {/*<Partners />*/}
         <section className="section">
           <Features />
-          <Tools />
 
           <Team />
-          <Websites />
         </section>
         <FooterSection />
       </React.Fragment>

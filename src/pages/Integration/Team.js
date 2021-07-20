@@ -35,8 +35,8 @@ export function Team() {
       socialIds: [
         // { icon: 'facebook', link: '#' },
         // { icon: 'instagram', link: '#' },
-        { icon: 'twitter', link: '#' },
-        { icon: 'linkedin', link: '#' },
+        { icon: 'twitter', link: 'https://twitter.com/stevedakh' },
+        { icon: 'linkedin', link: 'https://www.linkedin.com/in/steve-dakh/' },
       ],
     },
     {
@@ -48,8 +48,8 @@ export function Team() {
       socialIds: [
         // { icon: 'facebook', link: '#' },
         // { icon: 'instagram', link: '#' },
-        { icon: 'twitter', link: '#' },
-        { icon: 'linkedin', link: '#' },
+        { icon: 'twitter', link: 'https://twitter.com/LeonidBeder' },
+        { icon: 'linkedin', link: 'https://www.linkedin.com/in/leonidb/' },
       ],
     },
     {
