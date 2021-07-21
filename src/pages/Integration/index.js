@@ -3,10 +3,12 @@ import React, { Component } from 'react';
 // import Component
 import Section from './Section';
 import Features from './Features';
-import Tools from './Tools';
-import Websites from './Websites';
+// import Tools from './Tools';
+// import Websites from './Websites';
 import FooterSection from './FooterSection';
 import { Team } from './Team';
+import Topbar from '../../components/Layout/Topbar';
+import Footer from '../../components/Layout/Footer';
 
 export default class index extends Component {
   componentDidMount() {
@@ -34,6 +36,7 @@ export default class index extends Component {
   render() {
     return (
       <React.Fragment>
+        <Topbar/>
         <Section />
         {/*<Partners />*/}
         <section className="section">
@@ -42,6 +45,7 @@ export default class index extends Component {
           <Team />
         </section>
         <FooterSection />
+        <Footer/>
       </React.Fragment>
     );
   }

@@ -12,7 +12,7 @@ import "./assets/css/materialdesignicons.min.css";
 import "./Apps.scss";
 
 import "./assets/css/colors/default.css";
-
+import Index from './pages/Integration/index'
 // Include Routes
 import routes from "./routes";
 
@@ -47,25 +47,7 @@ class App extends Component {
       <React.Fragment>
         <Router>
           <Suspense fallback={this.Loader()}>
-            <Switch>
-              {routes.map((route, idx) =>
-                route.isWithoutLayout ? (
-                  <Route
-                    path={route.path}
-                    exact={route.exact}
-                    component={route.component}
-                    key={idx}
-                  />
-                ) : (
-                  <Route
-                    path={route.path}
-                    exact
-                    component={withLayout(route.component, route.isTopbarDark)}
-                    key={idx}
-                  />
-                )
-              )}
-            </Switch>
+            <Index/>
           </Suspense>
         </Router>
       </React.Fragment>

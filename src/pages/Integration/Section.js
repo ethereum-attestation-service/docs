@@ -35,9 +35,9 @@ export default class Section extends Component {
                       rel="noopener noreferrer"
                       id="buyButton"
                       className="btn btn-light"
-                      href="//"
+                      href="./EAS-Slides-v1.pdf"
                     >
-                      Read the whitepaper
+                      View the slides
                     </a>
                   </div>
                   {/*<div className="subcribe-form mt-4 pt-2">*/}

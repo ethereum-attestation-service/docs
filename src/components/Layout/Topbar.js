@@ -3,22 +3,13 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import {
   Container,
-  Form,
   Modal,
   ModalBody,
-  Dropdown,
-  DropdownMenu,
-  DropdownToggle,
-  UncontrolledDropdown,
 } from 'reactstrap';
 
 //Import images
 import logodark from '../../assets/images/logo-dark.png';
 import logolight from '../../assets/images/logo-light.png';
-import shop1 from '../../assets/images/shop/product/s-1.jpg';
-import shop2 from '../../assets/images/shop/product/s-2.jpg';
-import shop3 from '../../assets/images/shop/product/s-3.jpg';
-import NavbarButtons from '../Shared/NavbarButtons';
 
 class Topbar extends Component {
   constructor(props) {
