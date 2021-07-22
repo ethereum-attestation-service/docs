@@ -17,7 +17,10 @@ class Topbar extends Component {
     this.state = {
       isOpen: false,
       dropdownOpenShop: false,
-      navLinks: [],
+      navLinks: [
+        { id: 1, title: 'Github', link: 'https://github.com/ethereum-attestation-service/contracts' },
+
+      ],
       wishlistModal: false,
       dropdownIsOpen: false,
     };
@@ -382,7 +385,7 @@ class Topbar extends Component {
                     </li>
                   ) : (
                     <li key={key}>
-                      <Link to={navLink.link}>{navLink.title}</Link>
+                      <a href={navLink.link} target={'_blank'}>{navLink.title}</a>
                     </li>
                   ),
                 )}

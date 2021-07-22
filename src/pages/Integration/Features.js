@@ -61,8 +61,8 @@ export default class Partners extends Component {
                         Tamper-proof Voting
                       </Link>
                       <p className="text-muted mt-2 mb-0">
-                        User can make vote for a party member or proposal using
-                        an attestation type for voting.
+                        Users can make a vote for a party member or proposal using
+                        an attestation schema for voting.
                       </p>
                     </div>
                   </div>

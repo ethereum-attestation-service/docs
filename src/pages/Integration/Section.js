@@ -35,7 +35,7 @@ export default class Section extends Component {
                       rel="noopener noreferrer"
                       id="buyButton"
                       className="btn btn-light"
-                      href="./EAS-Slides-v1.pdf"
+                      href="./EAS-slides-v2.pdf"
                     >
                       View the slides
                     </a>
