@@ -53,16 +53,16 @@ export function Team() {
       ],
     },
     {
-      id: 2,
+      id: 3,
       image: dino,
       name: 'Dino Mark',
       designation: 'Builder/Early Ethereum contributor',
       link: '',
       socialIds: [
-        // { icon: 'facebook', link: '#' },
-        // { icon: 'instagram', link: '#' },
-        { icon: 'twitter', link: '#' },
-        { icon: 'linkedin', link: '#' },
+        // // { icon: 'facebook', link: '#' },
+        // // { icon: 'instagram', link: '#' },
+        // { icon: 'twitter', link: '#' },
+        // { icon: 'linkedin', link: '#' },
       ],
     },
   ];
@@ -94,14 +94,14 @@ export function Team() {
                     <ul className="list-unstyled social-icon team-icon mb-0 mt-4">
                       {candidate.socialIds.map((id, key) => (
                         <li key={key} className="list-inline-item">
-                          <Link to={id.link} className="rounded">
+                          <a href={id.link} className="rounded" target={'_blank'}>
                             <i>
                               <FeatherIcon
                                 icon={id.icon}
                                 className="fea icon-sm fea-social"
                               />
                             </i>
-                          </Link>
+                          </a>
                         </li>
                       ))}
                     </ul>
