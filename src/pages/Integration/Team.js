@@ -6,6 +6,7 @@ import FeatherIcon from 'feather-icons-react';
 import steve from '../../assets/images/team/steve.jpeg';
 import leonid from '../../assets/images/team/leonid.png';
 import dino from '../../assets/images/team/dino.png';
+import dean from '../../assets/images/team/dean.jpeg';
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -67,7 +68,23 @@ export function Team() {
     },
   ];
 
-  const candidates = shuffle(candidatesArr);
+  const advisors = [
+    {
+      id: 4,
+      image: dean,
+      name: 'Dean Eigenmann',
+      designation: 'Advisor (ENS)',
+      link: '',
+      socialIds: [
+        // // { icon: 'facebook', link: '#' },
+        // // { icon: 'instagram', link: '#' },
+        { icon: 'twitter', link: 'https://twitter.com/DeanEigenmann' },
+        // { icon: 'linkedin', link: '#' },
+      ],
+    },
+  ];
+
+  const candidates = shuffle(candidatesArr).concat(advisors);
 
   return (
     <div>
