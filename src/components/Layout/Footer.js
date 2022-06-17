@@ -31,11 +31,11 @@ class Footer extends Component {
         // { title: "Login", link: "/page-cover-login" },
       ],
       grid2: [
-        { title: 'Terms of Services', link: '/page-terms' },
-        { title: 'Privacy Policy', link: '/page-privacy' },
-        { title: 'Documentation', link: '/documentation' },
-        { title: 'Changelog', link: '/changelog' },
-        { title: 'Components', link: '/components' },
+        { title: 'Twitter', link: 'https://twitter.com/eas_eth' },
+        // { title: 'Privacy Policy', link: '/page-privacy' },
+        // { title: 'Documentation', link: '/documentation' },
+        // { title: 'Changelog', link: '/changelog' },
+        // { title: 'Components', link: '/components' },
       ],
     };
   }
@@ -73,38 +73,39 @@ class Footer extends Component {
                 name="footercolumn"
               ></Col>
 
-              {/*<Col*/}
-              {/*  lg="3"*/}
-              {/*  md="4"*/}
-              {/*  xs="12"*/}
-              {/*  className="mt-4 mt-sm-0 pt-2 pt-sm-0"*/}
-              {/*  name="footercolumn"*/}
-              {/*>*/}
-              {/*  <h5*/}
-              {/*    className={*/}
-              {/*      this.props.isLight*/}
-              {/*        ? "text-dark footer-head"*/}
-              {/*        : "text-light footer-head"*/}
-              {/*    }*/}
-              {/*  >*/}
-              {/*    Usefull Links*/}
-              {/*  </h5>*/}
-              {/*  <ul className="list-unstyled footer-list mt-4">*/}
-              {/*    {this.state.grid2.map((grid, key) => (*/}
-              {/*      <li key={key}>*/}
-              {/*        <Link*/}
-              {/*          to={grid.link}*/}
-              {/*          className={*/}
-              {/*            this.props.isLight ? "text-muted" : "text-foot"*/}
-              {/*          }*/}
-              {/*        >*/}
-              {/*          <i className="mdi mdi-chevron-right me-1"></i>*/}
-              {/*          {grid.title}*/}
-              {/*        </Link>*/}
-              {/*      </li>*/}
-              {/*    ))}*/}
-              {/*  </ul>*/}
-              {/*</Col>*/}
+              <Col
+                lg="3"
+                md="4"
+                xs="12"
+                className="mt-4 mt-sm-0 pt-2 pt-sm-0"
+                name="footercolumn"
+              >
+                <h5
+                  className={
+                    this.props.isLight
+                      ? "text-dark footer-head"
+                      : "text-light footer-head"
+                  }
+                >
+                  Usefull Links
+                </h5>
+                <ul className="list-unstyled footer-list mt-4">
+                  {this.state.grid2.map((grid, key) => (
+                    <li key={key}>
+                      <a
+                        target={'_blank'}
+                        href={grid.link}
+                        className={
+                          this.props.isLight ? "text-muted" : "text-foot"
+                        }
+                      >
+                        <i className="mdi mdi-chevron-right me-1"></i>
+                        {grid.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </Col>
 
               <Col
                 lg="3"
