@@ -21,13 +21,11 @@ export default class Section extends Component {
                   {/*  Integration*/}
                   {/*</span>*/}
                   <h4 className="heading text-white title-dark my-3">
-                    Decentralized Attestations for <br />
-                    Identity, Trust, & Everything
+                    A simple protocol for on-chain and off-chain Attestations
                   </h4>
                   <p className="para-desc mx-auto text-white-50">
                     Start building on the worlds base layer for all
-                    attestations. Help connect the planet one Attestation at a
-                    time.
+                    attestations. Built on Ethereum as a free and open public good.
                   </p>
                   <div className="buy-button">
                     <a
