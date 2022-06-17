@@ -9,6 +9,7 @@ import FooterSection from './FooterSection';
 import { Team } from './Team';
 import Topbar from '../../components/Layout/Topbar';
 import Footer from '../../components/Layout/Footer';
+import Info from "./Info";
 
 export default class index extends Component {
   componentDidMount() {
@@ -40,7 +41,9 @@ export default class index extends Component {
         <Section />
         {/*<Partners />*/}
         <section className="section">
+
           <Features />
+          <Info/>
 
           <Team />
         </section>

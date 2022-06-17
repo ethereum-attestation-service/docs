@@ -121,7 +121,7 @@ class Footer extends Component {
             <Row className="align-items-center">
               <Col sm="6">
                 <div className="text-sm-start">
-                  <p className="mb-0">© 2020-21 EAS.</p>
+                  <p className="mb-0">© 2022 EAS.</p>
                 </div>
               </Col>
 

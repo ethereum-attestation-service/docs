@@ -18,7 +18,8 @@ class Topbar extends Component {
       isOpen: false,
       dropdownOpenShop: false,
       navLinks: [
-        { id: 1, title: 'Github', link: 'https://github.com/ethereum-attestation-service/contracts' },
+        { id: 1, title: 'Explorer', link: 'https://easscan.com' },
+        { id: 2, title: 'Github', link: 'https://github.com/ethereum-attestation-service/contracts' },
 
       ],
       wishlistModal: false,
